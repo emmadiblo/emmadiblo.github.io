@@ -1,146 +1,1181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emmadiblo Portfolio - Coming Soon</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <!-- SEO Meta Tags -->
+  <title>Emmadiblo - Uwizeyimana Emmanuel</title>
+  <meta name="description" content="Uwizeyimana Emmanuel de son vrai nom, est un informaticien programmeur burundaise qui offre plusieurs services digital.">
+  <meta name="keywords" content="informatique,emmadiblo,uwizeyimana Emmanuel, numedev,programmation,burundi, Bujumbura, programmeur">
+  
+  
+  <meta property="og:title" content="Numedev - Formation et Développement digital au Burundi">
+  <meta property="og:description" content="Formation professionnelle en informatique et développement web au Burundi. Experts en programmation, bureautique et solutions numériques.">
+  <meta property="og:image" content="assets/img/clients/client-1.svg">
+  <meta property="og:url" content="https://emmadiblo.github.io">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Numedev - Formation et Développement digital au Burundi">
+  <meta name="twitter:description" content="Formation professionnelle en informatique et développement web au Burundi. Experts en programmation, bureautique et solutions numériques.">
+  <meta name="twitter:image" content="assets/img/clients/client-1.svg">
+  
+  <!-- Autres Meta Tags -->
+  <meta name="author" content="emmadiblo">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="French">
+  <meta name="geo.region" content="BI">
+  <meta name="geo.placename" content="Bujumbura">
+  
+  <link rel="stylesheet" href="timeline.css">
+  <link rel="stylesheet" href="tailwind/tailwind.min.css">
+  
+    <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/clients/client-1.svg" type="image/x-icon">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+
+  <script src="tailwind/tailwind.js"></script>
+
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "a3y_n6RaI1g1rqQRs",
+        });
+    })();
+  </script>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
 
-        body {
-            background: #0d1117;
-            color: #c9d1d9;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+        /* Overlay */
+    #loadingOverlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: rgba(83, 83, 83, 0.918);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-        .container {
-            text-align: center;
-            padding: 2rem;
-        }
+    }
 
-        .logo {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 2rem;
-            animation: float 3s ease-in-out infinite;
-        }
+    /* Loading bar container */
+    #loadingOverlay .relative {
+      width: 100%;
+      height: 7px;
+      background-color: white;
+      border-radius: 5px;
+      overflow: hidden;
+    }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #58a6ff;
-        }
+    /* Loading bar */
+    .loading-bar {
+      height: 100%;
+      width: 0;
+      background-color: oklch(45.7% 0.24 277.023);
+      transition: width 0.3s ease;
+    }
 
-        .message {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.8;
-        }
+    /* Loading text */
+    #loadingOverlay h2 {
+      margin-top: 16px;
+      color: var(--accent-color, #ffffff);
+      font-size: 1.25rem;
+    }
 
-        .timer {
-            font-size: 2rem;
-            color: #58a6ff;
-            margin-bottom: 2rem;
-        }
+/* From Uiverse.io by wilsondesouza */ 
+ul {
+  list-style: none;
+}
 
-        .social-links a {
-            color: #c9d1d9;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
 
-        .social-links a:hover {
-            color: #58a6ff;
-        }
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
 
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0); }
-        }
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
 
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
 
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: #58a6ff;
-            border-radius: 50%;
-            animation: move 20s linear infinite;
-        }
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
+}
 
-        @keyframes move {
-            0% { transform: translateY(100vh); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-100vh); opacity: 0; }
-        }
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+
     </style>
 </head>
-<body>
-    <div class="particles"></div>
-    <div class="container">
-        <svg class="logo" viewBox="0 0 16 16" fill="#58a6ff">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+<body  class="bg-gradient-to-tl from-yellow-500 from-0% via-blue-200 via-50% to-purple-300 to-100% dark:bg-gray-800 text-black dark:text-white">
+
+  <div id="loadingOverlay">
+    <div class="relative">
+      <div class="loading-bar" id="loadingBar"></div>
+    </div>
+    <h2>Chargement en cours...</h2>
+  </div>
+
+  
+
+<!-- ========== HEADER ========== -->
+<header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
+  <nav class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-full mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
+    
+    <!-- Logo & Toggle Button Container -->
+    <div class="px-4 md:px-0 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="" aria-label="Preline" class="flex-none rounded-3xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 8.75 205.05 37.4" class="h-6" fill="#000">
+      
+          <text x="0" y="35" font-size="30" font-family="Arial, sans-serif">Emmadiblo</text>
         </svg>
-        <h1>Emmadiblo Portfolio Coming Soon</h1>
-        <p class="message">Exciting projects are being prepared. Stay tuned!</p>
-        <div class="timer" id="timer">Loading...</div>
-        <div class="social-links">
-            <a href="https://github.com/emmadiblo" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/emmadiblouwizeyimana" target="_blank">LinkedIn</a>
-            <a href="mailto:emmadiblouwizeyimana@gmail.com">Email</a>
+      </a>
+
+      <!-- Mobile Menu Toggle Button -->
+      <div class="md:hidden">
+        <button type="button"
+          class="hs-collapse-toggle flex justify-center items-center size-7 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none dark:border-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700"
+          id="hs-navbar-header-floating-collapse"
+          aria-expanded="false"
+          aria-controls="hs-navbar-header-floating"
+          aria-label="Toggle navigation"
+          data-hs-collapse="#hs-navbar-header-floating">
+          <!-- Hamburger Icon -->
+          <svg class="hs-collapse-open:hidden shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <line x1="3" x2="21" y1="6" y2="6" />
+            <line x1="3" x2="21" y1="12" y2="12" />
+            <line x1="3" x2="21" y1="18" y2="18" />
+          </svg>
+          <!-- Close Icon -->
+          <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path d="M18 6 6 18" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+
+    </div>
+
+    <!-- Navigation Links -->
+    <div id="hs-navbar-header-floating"
+      class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block"
+      aria-labelledby="hs-navbar-header-floating-collapse">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
+        <a href="#home"
+          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-gray-800 font-medium  text-gray-800 focus:outline-none dark:border-neutral-200 dark:text-neutral-200"
+          >
+        Apropos
+        </a>
+        <a href="#projets"
+          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
+          Projects
+        </a>
+        <a href="#timeline"
+          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
+         Parcours
+        </a>
+        <a href="#services"
+          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
+          Services
+        </a>
+
+        <a href="#contact"
+        class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
+       Contacter
+      </a>
+      </div>
+    </div>
+
+
+    <div class="flex justify-center" >
+
+   
+
+
+      <select id="small_select" class="h-auto border border-gray-300 text-gray-600 text-base rounded-lg mx-2.5 py-1.5 px-2 focus:outline-none">
+     
+        <option value="EN">English</option>
+        <option selected value="FR">Français</option>
+    
+        </select>
+
+
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none  rounded-full text-sm p-2.5">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+      </button>
+
+    </div>
+
+    
+
+  </nav>
+
+</header>
+<!-- ========== END HEADER ========== -->
+
+  <section id="home" class="py-8 relative xl:mr-0 lg:mr-5 mr-0">
+    <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
+        <div class="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
+            <div class="w-full flex-col justify-center lg:items-start items-center gap-10 inline-flex">
+                <div class="w-full flex-col justify-center items-start gap-8 flex">
+                   
+        
+
+                        <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
+                          <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 01. A propos de moi }</h6>
+                          <div class="mx-auto px-4 sm:container">
+                            <div class="border-primary border-l-[5px] pl-5">
+                              <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                                Je m'appelle Uwizeyimana Emmanuel
+                               </h2>
+                               <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                                je suis un développeur burundais des applications web et mobile  passionné de l'innovation et de la technologie informatique.
+                               </p>
+                            </div>
+                         </div>
+                      </div>
+
+
+                    <div class="w-full flex-col justify-center items-start gap-6 flex">
+                        <div class="w-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
+                            <div
+                                class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">5+ ans</h4>
+                                <p class="text-gray-500 text-base font-normal leading-relaxed">
+                                  J'ai l'experience de plus de 5 dans le développement des applications
+                                </p>
+                            </div>
+                            <div
+                                class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">125+ projets
+                                </h4>
+                                <p class="text-gray-500 text-base font-normal leading-relaxed">
+                                  J'ai realisé beaucoup des projects utiles pour les développeurs ou utilisateurs
+                                </p>
+                            </div>
+                        </div>
+                        <div class="w-full h-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
+                            <div
+                                class="w-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">10+ Certificats</h4>
+                                <p class="text-gray-500 text-base font-normal leading-relaxed">
+                                  Durant ma carrière, j'ai obtenu aussi des certificats dans ce domaine.
+                                </p>
+                            </div>
+                            <div
+                                class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
+                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">100%
+                                    Clients satisfaits</h4>
+                                <p class="text-gray-500 text-base font-normal leading-relaxed">
+                                  Tous mes clients sont satisfaits a cause des services bien faits. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-around">
+                <button
+                    class="sm:w-fit w-full group px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] transition-all duration-700 ease-in-out justify-center items-center flex">
+                    <span
+                        class="px-1.5 text-indigo-600 text-sm font-medium leading-6 group-hover:-translate-x-0.5 transition-all duration-700 ease-in-out">
+                      Contact via:
+                      </span>
+                    <svg class="group-hover:translate-x-0.5 transition-all duration-700 ease-in-out"
+                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M6.75265 4.49658L11.2528 8.99677L6.75 13.4996" stroke="#4F46E5" stroke-width="1.6"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                </button>
+            <ul class="example-2">
+              <li class="icon-content">
+                <a
+                  href="https://linkedin.com/emmadiblouwizeyimana"
+                  aria-label="LinkedIn"
+                  data-social="linkedin"
+                >
+                  <div class="filled"></div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-linkedin"
+                    viewBox="0 0 16 16"
+                    xml:space="preserve"
+                  >
+                    <path
+                      d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </a>
+                <div class="tooltip">LinkedIn</div>
+              </li>
+              <li class="icon-content">
+                <a href="https://www.github.com/emmadiblo" aria-label="GitHub" data-social="github">
+                  <div class="filled"></div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-github"
+                    viewBox="0 0 16 16"
+                    xml:space="preserve"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </a>
+                <div class="tooltip">GitHub</div>
+              </li>
+             
+              <li class="icon-content">
+                <a
+                  data-social="whatsapp"
+                  aria-label="Whatsapp"
+                  href="https://api.whatsapp.com/send?phone=+25765517561&amp;text=Hello%20emmadiblo"
+                >
+                  <div class="filled"></div>
+                  <svg
+                    xml:space="preserve"
+                    viewBox="0 0 24 24"
+                    class="bi bi-whatsapp"
+                    fill="currentColor"
+                    height="24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                    ></path>
+                  </svg>
+                </a>
+                <div class="tooltip">Whatsapp</div>
+              </li>
+              <li class="icon-content">
+                <a
+                  data-social="facebook"
+                  aria-label="Facebook"
+                  href="https://www.facebook.com/emmadiblouwizeyimana"
+                >
+                  <div class="filled"></div>
+                  <svg
+                    xml:space="preserve"
+                    viewBox="0 0 24 24"
+                    class="bi bi-facbook"
+                    fill="currentColor"
+                    height="24"
+                    width="24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"
+                    ></path>
+                  </svg>
+                </a>
+                <div class="tooltip">Facebook</div>
+              </li>
+
+              <li class="icon-content">
+                <a
+                  href="https://www.instagram.com/emmadiblouwizeyimana"
+                  aria-label="Instagram"
+                  data-social="instagram"
+                >
+                  <div class="filled"></div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-instagram"
+                    viewBox="0 0 16 16"
+                    xml:space="preserve"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                      fill="currentColor"
+                    ></path>
+                  </svg>
+                </a>
+                <div class="tooltip">Instagram</div>
+              </li>
+
+            </ul>
+
+
+              </div>
+                
+            </div>
+            <div class="w-full lg:justify-start justify-center items-start flex">
+                <div
+                    class="sm:w-[564px] w-full sm:h-[646px] h-full sm:bg-gray-100 rounded-3xl sm:border border-gray-200 relative">
+                    <img class="sm:mt-5 sm:ml-5 w-full h-full rounded-3xl object-cover"
+                        src="img/IMG-20250318-WA0000 (1).png" alt="Image indisponible:Hero image" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+                                        
+
+
+    
+    <section id="projets" class="text-gray-600 body-font">
+      <div class="max-w-4xl mx-auto m-4">
+
+          
+          <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
+            <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 02. Mes projets }</h6>
+            <div class="mx-auto px-4 sm:container">
+              <div class="border-primary border-l-[5px] pl-5">
+                <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                  Les projets que j'ai réalisés
+                 </h2>
+                 <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                  Découvrez mes projets réalisés avec amour et dédication.
+                 </p>
+              </div>
+           </div>
+        </div>
+
+
+          <div class="flex flex-wrap m-4">
+
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/birastat.png" alt="Image indisponible:birastat">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web app</span> Novembre 2024</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Birastat</h1>
+                  <p class="leading-relaxed mb-3">Birastat est une application conçue pour aider les Burundais et les Rwandais d'écouter en ligne les stations de Radio qu'ils aiment.</p>
+                  <div class="flex items-center flex-wrap ">
+                    <a target="_blank" href="https://bit.ly/birastat"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
+<svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/caladetect.png " alt="Image indisponible:Image de Caladetect">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Janvier 2025</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Caladetect</h1>
+                  <p class="leading-relaxed mb-3">Détecteur des couleurs sur des images en ligne avec la copie rapide.</p>
+                  <div class="flex items-center flex-wrap">
+                    <a target="_blank" href="https://emmadiblo.github.io/caladetect"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
+<svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/editovcard.png" alt="Image indisponible:blog">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Janvier 2025</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">EditoVcard</h1>
+                  <p class="leading-relaxed mb-3">Un éditeur intuitif de contacts avec une fonctionnalité d'exportation rapide en format .vcf. Parfait pour organiser vos carnets d'adresses.</p>
+                  <div class="flex items-center flex-wrap ">
+                    <a target="_blank" href="https://emmadiblo.github.io/editovcard/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'éditeur
+<svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/gitarchive.png" alt="Image indisponible:blog">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web app</span> Janvier 2025</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">GitArchive</h1>
+                  <p class="leading-relaxed mb-3">Téléchargeur des répos sur github Recherche et télécharger tout répo github en zip rapidement.</p>
+                  <div class="flex items-center flex-wrap ">
+                    <a target="_blank" href="https://emmadiblo.github.io/gitArchive/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
+<svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/editomark.png" alt="Image indisponible:blog">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Décembre 2024</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">EditoMark</h1>
+                  <p class="leading-relaxed mb-3">Un éditeur Markdown en ligne offrant une prévisualisation en temps réel, facilitant la création de contenu formaté..</p>
+                  <div class="flex items-center flex-wrap ">
+                    <a target="_blank" href="https://emmadiblo.github.io/editomark/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'éditeur
+<svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 md:w-1/3">
+              <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/php.png" alt="Image indisponible: Stand.php">
+                <div class="p-6">
+                  <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Framwork</span> Avril 2025</h2>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Stand.php</h1>
+                  <p class="leading-relaxed mb-3">Mini-bibliothèque PHP pour faciliter la gestion des bases de données et des sessions.</p>
+                  <div class="flex items-center flex-wrap ">
+                    <a target="_blank" href="https://github.com/emmadiblo/stand.php/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Voir sur github
+<svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+
+
+  
+
+
+      <section id="timeline">
+        <div class="max-w-4xl mx-auto m-4">
+
+          <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
+            <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 03. Mon parcours }</h6>
+            <div class="mx-auto px-4 sm:container">
+              <div class="border-primary border-l-[5px] pl-5">
+                <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                  Mon parcours professionnel
+                 </h2>
+                 <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                  Découvrez ma chronorgie des activités durant durant toute ma vie.
+                 </p>
+              </div>
+           </div>
+        </div>
+
+
+    
+      <!-- The Timeline -->
+       <div class="timeline-section m-4">
+      
+      <ul class="timeline">
+      
+          <!-- Item 1 -->
+          <li>
+              <div class="direction-r">
+                  <div class="flag-wrapper">
+                      <span class="flag">Fondateur, CEO</span>
+                      <span class="time-wrapper"><span class="time">2023 - present</span></span>
+                  </div>
+                  <div class="desc">Fondateur et Répresentat de Numedev une organisation de dévéloppement digital au Burundi <a href="//numedev.github.io"   onmouseout="this.style.textDecoration='underline';" style="color: #fd1f1f; ">En savoir plus</a></div>
+              </div>
+          </li>
+        
+          <!-- Item 2 -->
+          <li>
+              <div class="direction-l">
+                  <div class="flag-wrapper">
+                      <span class="flag">Université du Burundi</span>
+                      <span class="time-wrapper"><span class="time">2022 - 2025</span></span>
+                  </div>
+                  <div class="desc">Etudiant à l'Université du Burundi avec aussi le renforcement des capacités dans la programmation.</div>
+              </div>
+          </li>
+      
+          <li>
+            <div class="direction-r">
+                <div class="flag-wrapper">
+                    <span class="flag">Initialisation</span>
+                    <span class="time-wrapper"><span class="time">2020</span></span>
+                </div>
+                <div class="desc">Initialisation de la carrière de la programmation avec la langage de structure HTML</div>
+            </div>
+        </li>
+
+          <li>
+              <div class="direction-l">
+                  <div class="flag-wrapper">
+                      <span class="flag">Lycée Technique Maramvya (LTM)</span>
+                      <span class="time-wrapper"><span class="time">2018-2021</span></span>
+                  </div>
+                  <div class="desc">Etudes en informatique de maintenance au Lycée Technique Maramvya à Kayanza</div>
+              </div>
+          </li>
+
+          <li>
+            <div class="direction-r">
+                <div class="flag-wrapper">
+                    <span class="flag">ECOFO Nyakararo</span>
+                    <span class="time-wrapper"><span class="time">2009-2017</span></span>
+                </div>
+                <div class="desc">Etudes de l'école primaire et fondamentale</div>
+            </div>
+        </li>
+
+        <li>
+          <div class="direction-l">
+              <div class="flag-wrapper">
+                  <span class="flag">Naissance</span>
+                  <span class="time-wrapper"><span class="time">27-12-2002</span></span>
+              </div>
+              <div class="desc">Né à Kigoma, Marangara, Ngozi, Burundi</div>
+          </div>
+      </li>
+        
+      </ul>
+    </div>
+      </div>
+    </section>
+
+
+
+
+<section id="services" >
+  <div class="max-w-4xl mx-auto m-4">
+
+  <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
+    <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 04. Mes services }</h6>
+    <div class="mx-auto px-4 sm:container">
+      <div class="border-primary border-l-[5px] pl-5">
+        <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+          Services offerts
+         </h2>
+         <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+          Découvrez mes services dans le domaine de la conception, du développement et de la gestion des projets. Je suis là pour vous
+         </p>
+      </div>
+   </div>
+</div>
+
+
+
+    <div class="max-w-4xl mx-auto m-4">
+      <!-- Grid -->
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-12">
+        <div class="space-y-6 lg:space-y-10">
+          <!-- Icon Block -->
+          <div class="flex gap-x-5 sm:gap-x-8">
+            <svg class="shrink-0 mt-2 size-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+            
+            <div class="grow">
+              <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+                Développement web
+              </h3>
+              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+                Conception et création de sites web et d'applications web, sites E-commerce(boutiques en ligne),...
+              </p>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+  
+          <!-- Icon Block -->
+          <div class="flex gap-x-5 sm:gap-x-8">
+            <svg class="shrink-0 mt-2 size-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+            </svg>
+            
+            <div class="grow">
+              <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+               Développement mobile
+              </h3>
+              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+                Création d'applications pour les Android, les applications mobiles
+              </p>
+            </div>
+          </div>
+          <!-- End Icon Block -->
+  
+          <!-- Icon Block -->
+
+          <!-- End Icon Block -->
+        </div>
+        <!-- End Col -->
+  
+        <div class="space-y-6 lg:space-y-10">
+
+
+          <div class="flex gap-x-5 sm:gap-x-8">
+            <svg class="shrink-0 mt-2 size-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 13.5H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+            </svg>
+            
+            <div class="grow">
+              <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+               Développement des logiciels
+              </h3>
+              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+                Conception et développement d'applications de bureau, de logiciels de gestion, etc.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Icon Block -->
+          <div class="flex gap-x-5 sm:gap-x-8">
+         
+            
+            <svg class="shrink-0 mt-2 size-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+            </svg>
+            
+            <div class="grow">
+              <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+                Services-conseils en développement
+              </h3>
+              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+                Accompagner les entreprises dans le processus de développement, de la planification à la maintenance de leurs sites ou des applications
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <!-- End Col -->
+      </div>
+      <!-- End Grid -->
+    </div>
+
+  </div>
+  </section>
+
+
+
+
+  <section id="contact">
+
+
+
+    <div class="max-w-4xl mx-auto m-4">
+
+    <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
+      <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 05. Contact }</h6>
+      <div class="mx-auto px-4 sm:container">
+        <div class="border-primary border-l-[5px] pl-5">
+          <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+            Contactez Moi
+           </h2>
+           <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+            Je suis disponible pour toute question, appréciations ou suggestions. N'hésitez pas à me contacter
+           </p>
+        </div>
+     </div>
+  </div>
+  
+
+    <div class="grid sm:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl bg-indigo-50  rounded-md">
+
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-1">
+        <div>
+            <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+            </span>
+
+            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
+            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">emmadiblouwizeyimana@gmail.com</p>
+        </div>
+
+        <div>
+            <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+            </span>
+            
+            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Office</h2>
+            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">Boulevard Patrice lumumba, Exellence house, Bureau 3.10 Bujumbura Burundi </p>
+        </div>
+
+        <div>
+            <span class="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+            </span>
+            
+            <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone, Whatsapp</h2>
+            <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">+257 65517561</p>
         </div>
     </div>
 
-    <script>
-        // Create particles
-        const particlesContainer = document.querySelector('.particles');
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 20 + 's';
-            particlesContainer.appendChild(particle);
+      <form class="space-y-4" id="contactForm">
+        <input type='text' id="name" placeholder='Votre nom et prenom'
+          class="w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
+        <input type='email' id="email" placeholder='Email'
+          class="w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
+        <input type='text' id="subject" placeholder='Sujet du message'
+          class="w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
+        <textarea id="message" placeholder='Message' rows="6"
+          class="w-full text-slate-900 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-blue-500"></textarea>
+        <button type='submit'
+          class="text-white bg-blue-500 hover:bg-blue-600 rounded-md text-[15px] font-medium px-4 py-2 w-full !mt-6">Envoyer</button>
+          <div style="text-align: center;" id="statusMessage"></div>
+      
+        </form>
+    </div>
+  </div>
+  </section>
+
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer >
+    <div class="mx-auto max-w-5xl  m-4 sm:px-6 lg:px-8 p-4">
+      <div class="flex justify-center text-teal-600">
+
+  
+      <ul class="mt-12 flex justify-center gap-6 md:gap-8">
+        <li>
+          <a
+            href="#"
+            rel="noreferrer"
+            target="_blank"
+            class="text-gray-700 transition hover:text-gray-700/75"
+          >
+            <span class="sr-only">Facebook</span>
+            <svg class="h-8 w-8 text-gray-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+          </a>
+        </li>
+  
+        <li>
+          <a
+            href="#"
+            rel="noreferrer"
+            target="_blank"
+            class="text-gray-700 transition hover:text-gray-700/75"
+          >
+            <span class="sr-only">Linkedin</span>
+            <svg class="h-8 w-8 text-gray-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />  <rect x="2" y="9" width="4" height="12" />  <circle cx="4" cy="4" r="2" /></svg>
+          </a>
+        </li>
+  
+  
+        <li>
+          <a
+            href="#"
+            rel="noreferrer"
+            target="_blank"
+            class="text-gray-700 transition hover:text-gray-700/75"
+          >
+            <span class="sr-only">GitHub</span>
+            <svg class="h-8 w-8 text-gray-500"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" /></svg>
+          </a>
+        </li>
+  
+       
+      </ul>
+    </div>
+
+    <div class=" text-center text-surface dark:text-white" >
+      <p class="flex h-10 items-center justify-center bg-blue-600 px-4 text-sm  text-white sm:px-6 lg:px-8">
+        
+        © <sapn id="date"></span> <script>
+          var date= new Date();
+          var year= date.getFullYear();
+          document.getElementById("date").innerText=year
+         </script> Developped & Designed by <strong>Emmadiblo</strong> from
+         <a href="https://numedv.github.io/"><strong>Numedev</strong></a>
+         
+      </p>
+     
+    </div>
+
+  </footer>
+
+
+
+  <!-- ========== END FOOTER ========== -->
+
+
+  <script>
+    /**
+   * Preloader
+   */
+
+  const loadingBar = document.getElementById('loadingBar');
+  const overlay = document.getElementById('loadingOverlay');
+
+  let progress = 0;
+  let interval;
+
+  function simulateProgress() {
+    interval = setInterval(() => {
+      // Simule une progression jusqu'à 90%
+      if (progress < 90) {
+        progress += Math.random() * 5; // un peu aléatoire
+        loadingBar.style.width = progress + "%";
+      }
+    }, 200);
+  }
+
+  // Commence à simuler la progression
+  simulateProgress();
+
+  // Quand tout est chargé réellement
+  window.addEventListener("load", () => {
+    clearInterval(interval); // stop simulation
+    progress = 100;
+    loadingBar.style.width = "100%";
+
+    // Petite pause avant de cacher
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 500);
+  });
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("#hs-navbar-header-floating a");
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const id = entry.target.getAttribute("id");
+          const navLink = document.querySelector(`#hs-navbar-header-floating a[href="#${id}"]`);
+
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.remove("border-gray-800","font-medium", "dark:border-neutral-200", "text-gray-800", "dark:text-neutral-200");
+              link.classList.add("border-transparent", "text-gray-500", "dark:text-neutral-400");
+            });
+
+            navLink.classList.remove("border-transparent", "text-gray-500", "dark:text-neutral-400");
+            navLink.classList.add("border-gray-800","font-medium","dark:border-neutral-200", "text-gray-800", "dark:text-neutral-200");
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.6 // Pour que 60% d'une section doivent être visibles
+      }
+    );
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+
+   // Variables pour les icônes
+   var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    var themeToggleBtn = document.getElementById('theme-toggle');
+
+    // Vérification du thème actuel dans le localStorage et du mode par défaut
+    if (localStorage.getItem('color-theme') === 'dark' || 
+        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      themeToggleLightIcon.classList.remove('hidden');
+    } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+    }
+
+    // Fonction pour basculer entre les modes sombre et clair
+    themeToggleBtn.addEventListener('click', function() {
+      // Basculer les icônes
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+
+      // Vérification de l'état du thème et mise à jour de localStorage et du mode
+      if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
         }
-
-        // Countdown timer
-        const launchDate = new Date();
-        launchDate.setDate(launchDate.getDate() + 30); // 30 days from now
-
-        function updateTimer() {
-            const now = new Date();
-            const distance = launchDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('timer').innerHTML = 
-                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      } else {
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('color-theme', 'light');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('color-theme', 'dark');
         }
+      }
+    });
 
-        setInterval(updateTimer, 1000);
-        updateTimer();
-    </script>
+
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    const statusMessage = document.getElementById("statusMessage");
+    const submitButton = this.querySelector("button[type='submit']");
+
+    // Désactive le bouton et change le texte
+    submitButton.disabled = true;
+    submitButton.textContent = "Envoi...";
+
+    // Affiche le message de statut
+    statusMessage.textContent = "Envoi en cours...";
+    statusMessage.style.color = "orange";
+
+    // Récupération des données du formulaire
+    const templateParams = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      message: document.getElementById("message").value
+    };
+
+    // Envoi via EmailJS
+    emailjs.send('Contact', 'template_21d30nu', templateParams)
+      .then(function (response) {
+        console.log('Success:', response);
+
+        statusMessage.textContent = "Message envoyé avec succès !";
+        statusMessage.style.color = "green";
+
+        // Réinitialise le formulaire
+        document.getElementById("contactForm").reset();
+      })
+      .catch(function (error) {
+        console.error('Error:', error);
+        statusMessage.textContent = "Message non envoyé ! Veuillez réessayer plus tard.";
+        statusMessage.style.color = "red";
+      })
+      .finally(function () {
+        // Réactive le bouton après la réponse
+        submitButton.disabled = false;
+        submitButton.textContent = "Envoyer";
+      });
+  });
+</script>
 </body>
-</html></svg>
+</html>
