@@ -10,17 +10,17 @@
   <meta name="keywords" content="informatique,emmadiblo,uwizeyimana Emmanuel, numedev,programmation,burundi, Bujumbura, programmeur">
   
   
-  <meta property="og:title" content="Numedev - Formation et Développement digital au Burundi">
-  <meta property="og:description" content="Formation professionnelle en informatique et développement web au Burundi. Experts en programmation, bureautique et solutions numériques.">
-  <meta property="og:image" content="assets/img/clients/client-1.svg">
+  <meta property="og:title" content="Emmadiblo - Uwizeyimana Emmanuel">
+  <meta property="og:description" content="Emmadiblo, de son vrai nom Uwizeyimana Emmanuel est un informaticien programmeur burundaise qui offre plusieurs services digital.">
+  <meta property="og:image" content="img/hero-image.png">
   <meta property="og:url" content="https://emmadiblo.github.io">
   <meta property="og:type" content="website">
   
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Numedev - Formation et Développement digital au Burundi">
-  <meta name="twitter:description" content="Formation professionnelle en informatique et développement web au Burundi. Experts en programmation, bureautique et solutions numériques.">
-  <meta name="twitter:image" content="assets/img/clients/client-1.svg">
+  <meta name="twitter:title" content="Emmadiblo - Uwizeyimana Emmanuel">
+  <meta name="twitter:description" content="Emmadiblo, de son vrai nom Uwizeyimana Emmanuel est un informaticien programmeur burundaise qui offre plusieurs services digital.">
+  <meta name="twitter:image" content="img/hero-image.png">
   
   <!-- Autres Meta Tags -->
   <meta name="author" content="emmadiblo">
@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="tailwind/tailwind.min.css">
   
     <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/img/clients/client-1.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="img/hero-image.png" type="image/x-icon">
   
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -45,7 +45,7 @@
   <script src="tailwind/tailwind.js"></script>
 
   <script>
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    // On page load or when changing themes
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
     } else {
@@ -99,7 +99,7 @@
       font-size: 1.25rem;
     }
 
-/* From Uiverse.io by wilsondesouza */ 
+
 ul {
   list-style: none;
 }
@@ -110,7 +110,6 @@ ul {
   align-items: center;
 }
 .example-2 .icon-content {
-  margin: 0 10px;
   position: relative;
 }
 .example-2 .icon-content .tooltip {
@@ -205,7 +204,7 @@ ul {
 
     </style>
 </head>
-<body  class="bg-gradient-to-tl from-yellow-500 from-0% via-blue-200 via-50% to-purple-300 to-100% dark:bg-gray-800 text-black dark:text-white">
+<body  class="bg-white dark:bg-black">
 
   <div id="loadingOverlay">
     <div class="relative">
@@ -224,10 +223,9 @@ ul {
     <div class="px-4 md:px-0 flex justify-between items-center">
       <!-- Logo -->
       <a href="" aria-label="Preline" class="flex-none rounded-3xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 8.75 205.05 37.4" class="h-6" fill="#000">
       
-          <text x="0" y="35" font-size="30" font-family="Arial, sans-serif">Emmadiblo</text>
-        </svg>
+     <span class="dark:text-white">Emmadiblo</span>
+        
       </a>
 
       <!-- Mobile Menu Toggle Button -->
@@ -343,14 +341,14 @@ ul {
                         <div class="w-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
                             <div
                                 class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">5+ ans</h4>
+                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">5+ ans</h4>
                                 <p class="text-gray-500 text-base font-normal leading-relaxed">
                                   J'ai l'experience de plus de 5 dans le développement des applications
                                 </p>
                             </div>
                             <div
                                 class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">125+ projets
+                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">125+ projets
                                 </h4>
                                 <p class="text-gray-500 text-base font-normal leading-relaxed">
                                   J'ai realisé beaucoup des projects utiles pour les développeurs ou utilisateurs
@@ -360,14 +358,14 @@ ul {
                         <div class="w-full h-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
                             <div
                                 class="w-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">10+ Certificats</h4>
+                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">10+ Certificats</h4>
                                 <p class="text-gray-500 text-base font-normal leading-relaxed">
                                   Durant ma carrière, j'ai obtenu aussi des certificats dans ce domaine.
                                 </p>
                             </div>
                             <div
                                 class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9">100%
+                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">100%
                                     Clients satisfaits</h4>
                                 <p class="text-gray-500 text-base font-normal leading-relaxed">
                                   Tous mes clients sont satisfaits a cause des services bien faits. 
@@ -559,7 +557,7 @@ ul {
                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/birastat.png" alt="Image indisponible:birastat">
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web app</span> Novembre 2024</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Birastat</h1>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">Birastat</h1>
                   <p class="leading-relaxed mb-3">Birastat est une application conçue pour aider les Burundais et les Rwandais d'écouter en ligne les stations de Radio qu'ils aiment.</p>
                   <div class="flex items-center flex-wrap ">
                     <a target="_blank" href="https://bit.ly/birastat"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
@@ -575,7 +573,7 @@ ul {
                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/caladetect.png " alt="Image indisponible:Image de Caladetect">
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Janvier 2025</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Caladetect</h1>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">Caladetect</h1>
                   <p class="leading-relaxed mb-3">Détecteur des couleurs sur des images en ligne avec la copie rapide.</p>
                   <div class="flex items-center flex-wrap">
                     <a target="_blank" href="https://emmadiblo.github.io/caladetect"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
@@ -591,7 +589,7 @@ ul {
                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/editovcard.png" alt="Image indisponible:blog">
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Janvier 2025</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">EditoVcard</h1>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">EditoVcard</h1>
                   <p class="leading-relaxed mb-3">Un éditeur intuitif de contacts avec une fonctionnalité d'exportation rapide en format .vcf. Parfait pour organiser vos carnets d'adresses.</p>
                   <div class="flex items-center flex-wrap ">
                     <a target="_blank" href="https://emmadiblo.github.io/editovcard/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'éditeur
@@ -609,7 +607,7 @@ ul {
                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/gitarchive.png" alt="Image indisponible:blog">
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web app</span> Janvier 2025</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">GitArchive</h1>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">GitArchive</h1>
                   <p class="leading-relaxed mb-3">Téléchargeur des répos sur github Recherche et télécharger tout répo github en zip rapidement.</p>
                   <div class="flex items-center flex-wrap ">
                     <a target="_blank" href="https://emmadiblo.github.io/gitArchive/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
@@ -626,7 +624,7 @@ ul {
                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/editomark.png" alt="Image indisponible:blog">
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Décembre 2024</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">EditoMark</h1>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">EditoMark</h1>
                   <p class="leading-relaxed mb-3">Un éditeur Markdown en ligne offrant une prévisualisation en temps réel, facilitant la création de contenu formaté..</p>
                   <div class="flex items-center flex-wrap ">
                     <a target="_blank" href="https://emmadiblo.github.io/editomark/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'éditeur
@@ -643,7 +641,7 @@ ul {
                 <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="img/php.png" alt="Image indisponible: Stand.php">
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Framwork</span> Avril 2025</h2>
-                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Stand.php</h1>
+                  <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">Stand.php</h1>
                   <p class="leading-relaxed mb-3">Mini-bibliothèque PHP pour faciliter la gestion des bases de données et des sessions.</p>
                   <div class="flex items-center flex-wrap ">
                     <a target="_blank" href="https://github.com/emmadiblo/stand.php/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Voir sur github
@@ -697,7 +695,7 @@ ul {
                       <span class="flag">Fondateur, CEO</span>
                       <span class="time-wrapper"><span class="time">2023 - present</span></span>
                   </div>
-                  <div class="desc">Fondateur et Répresentat de Numedev une organisation de dévéloppement digital au Burundi <a href="//numedev.github.io"   onmouseout="this.style.textDecoration='underline';" style="color: #fd1f1f; ">En savoir plus</a></div>
+                  <div class="desc dark:text-white">Fondateur et Répresentat de Numedev une organisation de dévéloppement digital au Burundi <a href="//numedev.github.io"   onmouseout="this.style.textDecoration='underline';" style="color: #fd1f1f; ">En savoir plus</a></div>
               </div>
           </li>
         
@@ -708,7 +706,7 @@ ul {
                       <span class="flag">Université du Burundi</span>
                       <span class="time-wrapper"><span class="time">2022 - 2025</span></span>
                   </div>
-                  <div class="desc">Etudiant à l'Université du Burundi avec aussi le renforcement des capacités dans la programmation.</div>
+                  <div class="desc dark:text-white">Etudiant à l'Université du Burundi avec aussi le renforcement des capacités dans la programmation.</div>
               </div>
           </li>
       
@@ -718,7 +716,7 @@ ul {
                     <span class="flag">Initialisation</span>
                     <span class="time-wrapper"><span class="time">2020</span></span>
                 </div>
-                <div class="desc">Initialisation de la carrière de la programmation avec la langage de structure HTML</div>
+                <div class="desc dark:text-white">Initialisation de la carrière de la programmation avec la langage de structure HTML</div>
             </div>
         </li>
 
@@ -728,7 +726,7 @@ ul {
                       <span class="flag">Lycée Technique Maramvya (LTM)</span>
                       <span class="time-wrapper"><span class="time">2018-2021</span></span>
                   </div>
-                  <div class="desc">Etudes en informatique de maintenance au Lycée Technique Maramvya à Kayanza</div>
+                  <div class="desc dark:text-white">Etudes en informatique de maintenance au Lycée Technique Maramvya à Kayanza</div>
               </div>
           </li>
 
@@ -738,7 +736,7 @@ ul {
                     <span class="flag">ECOFO Nyakararo</span>
                     <span class="time-wrapper"><span class="time">2009-2017</span></span>
                 </div>
-                <div class="desc">Etudes de l'école primaire et fondamentale</div>
+                <div class="desc dark:text-white">Etudes de l'école primaire et fondamentale</div>
             </div>
         </li>
 
@@ -748,7 +746,7 @@ ul {
                   <span class="flag">Naissance</span>
                   <span class="time-wrapper"><span class="time">27-12-2002</span></span>
               </div>
-              <div class="desc">Né à Kigoma, Marangara, Ngozi, Burundi</div>
+              <div class="desc dark:text-white">Né à Kigoma, Marangara, Ngozi, Burundi</div>
           </div>
       </li>
         
@@ -874,9 +872,7 @@ ul {
 
   <section id="contact">
 
-
-
-    <div class="max-w-4xl mx-auto m-4">
+    <div class="max-w-4xl mx-auto m-4 ">
 
     <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
       <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 05. Contact }</h6>
@@ -893,7 +889,7 @@ ul {
   </div>
   
 
-    <div class="grid sm:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl bg-indigo-50  rounded-md">
+    <div class="grid sm:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl bg-white  rounded-md dark:bg-black">
 
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-1">
         <div>
@@ -933,15 +929,15 @@ ul {
 
       <form class="space-y-4" id="contactForm">
         <input type='text' id="name" placeholder='Votre nom et prenom'
-          class="w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
+          class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
         <input type='email' id="email" placeholder='Email'
-          class="w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
+          class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
         <input type='text' id="subject" placeholder='Sujet du message'
-          class="w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
+          class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
         <textarea id="message" placeholder='Message' rows="6"
-          class="w-full text-slate-900 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-blue-500"></textarea>
+          class="dark:text-white w-full text-slate-900 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-blue-500"></textarea>
         <button type='submit'
-          class="text-white bg-blue-500 hover:bg-blue-600 rounded-md text-[15px] font-medium px-4 py-2 w-full !mt-6">Envoyer</button>
+          class=" text-white bg-blue-500 hover:bg-blue-600 rounded-md text-[15px] font-medium px-4 py-2 w-full !mt-6">Envoyer</button>
           <div style="text-align: center;" id="statusMessage"></div>
       
         </form>
