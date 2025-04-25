@@ -38,11 +38,13 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
   </script>
 
   <script src="tailwind/tailwind.js"></script>
+  <script src="jquery.js"></script>
 
   <script>
     // On page load or when changing themes
@@ -212,24 +214,21 @@ ul {
     <div class="relative">
       <div class="loading-bar" id="loadingBar"></div>
     </div>
-    <h2>Chargement en cours...</h2>
+    <h2 data-translate="loading">Chargement en cours...</h2>
   </div>
 
-  
 
 <!-- ========== HEADER ========== -->
 <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
-  <nav class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-full mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
+  <nav class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200  mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto dark:bg-neutral-900 dark:border-neutral-700">
     
     <!-- Logo & Toggle Button Container -->
     <div class="px-4 md:px-0 flex justify-between items-center">
       <!-- Logo -->
       <a href="" aria-label="Preline" class="flex-none rounded-3xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80">
-      
-     <span class="dark:text-white">Emmadiblo</span>
-        
+        <span class="dark:text-white">Emmadiblo</span>
       </a>
-
+        
       <!-- Mobile Menu Toggle Button -->
       <div class="md:hidden">
         <button type="button"
@@ -255,64 +254,40 @@ ul {
         </button>
       </div>
 
-
+      <select id="lang-switcher" class="h-auto border border-gray-300 text-gray-600 text-base rounded-lg mx-2.5 py-1.5 px-2 focus:outline-none">
+        <option class="lang-choice" data-lang="en" value="EN">English</option>
+        <option class="lang-choice" data-lang="fr" selected value="FR">Français</option>
+      </select>
     </div>
 
     <!-- Navigation Links -->
     <div id="hs-navbar-header-floating"
       class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block"
       aria-labelledby="hs-navbar-header-floating-collapse">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
-        <a href="#home"
-          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-gray-800 font-medium  text-gray-800 focus:outline-none dark:border-neutral-200 dark:text-neutral-200"
-          >
-        Apropos
+      <div class="flex flex-col md:flex-row md:items-center md:justify-center gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
+        <a href="#home" data-translate="about"
+          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-gray-800 font-medium text-gray-800 focus:outline-none dark:border-neutral-200 dark:text-neutral-200">
+          Apropos
         </a>
-        <a href="#projets"
+        <a href="#projets" data-translate="projects"
           class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
           Projects
         </a>
-        <a href="#timeline"
+        <a href="#timeline" data-translate="timeline"
           class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
-         Parcours
+          Parcours
         </a>
-        <a href="#services"
+        <a href="#services" data-translate="services"
           class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
           Services
         </a>
-
-        <a href="#contact"
-        class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
-       Contacter
-      </a>
+        <a href="#contact" data-translate="contact"
+          class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none dark:text-neutral-400 dark:hover:text-neutral-200">
+          Contacter
+        </a>
       </div>
     </div>
-
-
-    <div class="flex justify-center" >
-
-   
-
-
-      <select id="small_select" class="h-auto border border-gray-300 text-gray-600 text-base rounded-lg mx-2.5 py-1.5 px-2 focus:outline-none">
-     
-        <option value="EN">English</option>
-        <option selected value="FR">Français</option>
-    
-        </select>
-
-
-        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none  rounded-full text-sm p-2.5">
-          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-      </button>
-
-    </div>
-
-    
-
   </nav>
-
 </header>
 <!-- ========== END HEADER ========== -->
 
@@ -325,34 +300,34 @@ ul {
         
 
                         <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
-                          <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 01. A propos de moi }</h6>
+                          <h6 data-translate="title1" class="text-gray-400 text-base font-normal leading-relaxed">{ 01. A propos de moi }</h6>
                           <div class="mx-auto px-4 sm:container">
                             <div class="border-primary border-l-[5px] pl-5">
-                              <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                              <h2 data-translate="heading1" class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                                 Je m'appelle Uwizeyimana Emmanuel
                                </h2>
-                               <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                               <p data-translate="description1" data-translate="description1" class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                                 je suis un développeur burundais des applications web et mobile  passionné de l'innovation et de la technologie informatique.
                                </p>
                             </div>
                          </div>
                       </div>
 
-
+                
                     <div class="w-full flex-col justify-center items-start gap-6 flex">
                         <div class="w-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
                             <div
                                 class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">5+ ans</h4>
-                                <p class="text-gray-500 text-base font-normal leading-relaxed">
+                                <h4 data-translate="experience-title" class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">5+ Ans</h4>
+                                <p data-translate="experience-description" class="text-gray-500 text-base font-normal leading-relaxed">
                                   J'ai l'experience de plus de 5 dans le développement des applications
                                 </p>
                             </div>
                             <div
                                 class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">125+ projets
+                                <h4 data-translate="projects-title" class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">125+ Projets
                                 </h4>
-                                <p class="text-gray-500 text-base font-normal leading-relaxed">
+                                <p data-translate="projects-description" class="text-gray-500 text-base font-normal leading-relaxed">
                                   J'ai realisé beaucoup des projects utiles pour les développeurs ou utilisateurs
                                 </p>
                             </div>
@@ -360,16 +335,16 @@ ul {
                         <div class="w-full h-full justify-start items-center gap-8 grid md:grid-cols-2 grid-cols-1">
                             <div
                                 class="w-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">10+ Certificats</h4>
-                                <p class="text-gray-500 text-base font-normal leading-relaxed">
+                                <h4 data-translate="certificats-title" class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">10+ Certificats</h4>
+                                <p data-translate="certificats-description" class="text-gray-500 text-base font-normal leading-relaxed">
                                   Durant ma carrière, j'ai obtenu aussi des certificats dans ce domaine.
                                 </p>
                             </div>
                             <div
                                 class="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start items-start gap-2.5 inline-flex">
-                                <h4 class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">100%
+                                <h4 data-translate="clients-title" class="text-gray-900 text-2xl font-bold font-manrope leading-9 dark:text-white">100%
                                     Clients satisfaits</h4>
-                                <p class="text-gray-500 text-base font-normal leading-relaxed">
+                                <p data-translate="clients-description" class="text-gray-500 text-base font-normal leading-relaxed">
                                   Tous mes clients sont satisfaits a cause des services bien faits. 
                                 </p>
                             </div>
@@ -389,9 +364,10 @@ ul {
                             stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                 </button>
-            <ul class="example-2 flex justify-around w-full">
+            <ul class="example-2 flex justify-around">
               <li class="icon-content">
-                <a href="https://linkedin.com/in/emmadiblouwizeyimana"
+                <a
+                  href="https://linkedin.com/in/emmadiblouwizeyimana"
                   aria-label="LinkedIn"
                   data-social="linkedin"
                 >
@@ -510,7 +486,6 @@ ul {
 
             </ul>
 
-
               </div>
                 
             </div>
@@ -525,25 +500,19 @@ ul {
     </div>
 </section>
 
-
-
-
-                                        
-
-
-    
+                               
     <section id="projets" class="text-gray-600 body-font">
       <div class="max-w-4xl mx-auto m-4">
 
           
           <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
-            <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 02. Mes projets }</h6>
+            <h6 data-translate="title2" class="text-gray-400 text-base font-normal leading-relaxed">{ 02. Mes projets }</h6>
             <div class="mx-auto px-4 sm:container">
               <div class="border-primary border-l-[5px] pl-5">
-                <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                <h2 data-translate="heading2" class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                   Les projets que j'ai réalisés
                  </h2>
-                 <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                 <p data-translate="description2" class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                   Découvrez mes projets réalisés avec amour et dédication.
                  </p>
               </div>
@@ -559,9 +528,9 @@ ul {
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web app</span> Novembre 2024</h2>
                   <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">Birastat</h1>
-                  <p class="leading-relaxed mb-3">Birastat est une application conçue pour aider les Burundais et les Rwandais d'écouter en ligne les stations de Radio qu'ils aiment.</p>
-                  <div class="flex items-center flex-wrap ">
-                    <a target="_blank" href="https://bit.ly/birastat"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
+                  <p data-translate="birastat-description" class="leading-relaxed mb-3">Birastat est une application conçue pour aider les Burundais et les Rwandais d'écouter en ligne les stations de Radio qu'ils aiment.</p>
+                  <div  class="flex items-center flex-wrap ">
+                    <a target="_blank" href="https://bit.ly/birastat"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><span data-translate="launch-app">Lancer l'application</span>
 <svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
                     </a>
 
@@ -575,9 +544,9 @@ ul {
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Janvier 2025</h2>
                   <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">Caladetect</h1>
-                  <p class="leading-relaxed mb-3">Détecteur des couleurs sur des images en ligne avec la copie rapide.</p>
+                  <p data-translate="caladetect-description" class="leading-relaxed mb-3">Détecteur des couleurs sur des images en ligne avec la copie rapide.</p>
                   <div class="flex items-center flex-wrap">
-                    <a target="_blank" href="https://emmadiblo.github.io/caladetect"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
+                    <a target="_blank" href="https://emmadiblo.github.io/caladetect"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><span data-translate="launch-app">Lancer l'application</span>
 <svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
                     </a>
 
@@ -591,9 +560,9 @@ ul {
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Janvier 2025</h2>
                   <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">EditoVcard</h1>
-                  <p class="leading-relaxed mb-3">Un éditeur intuitif de contacts avec une fonctionnalité d'exportation rapide en format .vcf. Parfait pour organiser vos carnets d'adresses.</p>
+                  <p data-translate="editovcard-description" class="leading-relaxed mb-3">Un éditeur intuitif de contacts avec une fonctionnalité d'exportation rapide en format .vcf. Parfait pour organiser vos carnets d'adresses.</p>
                   <div class="flex items-center flex-wrap ">
-                    <a target="_blank" href="https://emmadiblo.github.io/editovcard/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'éditeur
+                    <a target="_blank" href="https://emmadiblo.github.io/editovcard/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><span data-translate="launch-edit">Lancer l'éditeur</span>
 <svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
                     </a>
 
@@ -609,9 +578,9 @@ ul {
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web app</span> Janvier 2025</h2>
                   <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">GitArchive</h1>
-                  <p class="leading-relaxed mb-3">Téléchargeur des répos sur github Recherche et télécharger tout répo github en zip rapidement.</p>
+                  <p data-translate="gitarchive-description" class="leading-relaxed mb-3">Téléchargeur des répos sur github Recherche et télécharger tout répo github en zip rapidement.</p>
                   <div class="flex items-center flex-wrap ">
-                    <a target="_blank" href="https://emmadiblo.github.io/gitArchive/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'application
+                    <a target="_blank" href="https://emmadiblo.github.io/gitArchive/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><span data-translate="launch-app">Lancer l'application</span>
 <svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
                     </a>
 
@@ -626,9 +595,9 @@ ul {
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Web tool</span> Décembre 2024</h2>
                   <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">EditoMark</h1>
-                  <p class="leading-relaxed mb-3">Un éditeur Markdown en ligne offrant une prévisualisation en temps réel, facilitant la création de contenu formaté..</p>
+                  <p data-translate="editomark-description" class="leading-relaxed mb-3">Un éditeur Markdown en ligne offrant une prévisualisation en temps réel, facilitant la création de contenu formaté..</p>
                   <div class="flex items-center flex-wrap ">
-                    <a target="_blank" href="https://emmadiblo.github.io/editomark/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Lancer l'éditeur
+                    <a target="_blank" href="https://emmadiblo.github.io/editomark/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><span data-translate="launch-edit">Lancer l'éditeur</span>
 <svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
                     </a>
 
@@ -643,9 +612,9 @@ ul {
                 <div class="p-6">
                   <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-blue-400 border border-blue-400">Framwork</span> Avril 2025</h2>
                   <h1 class="title-font text-lg font-medium text-gray-900 mb-3 dark:text-white">Stand.php</h1>
-                  <p class="leading-relaxed mb-3">Mini-bibliothèque PHP pour faciliter la gestion des bases de données et des sessions.</p>
+                  <p data-translate="standphp-description" class="leading-relaxed mb-3">Mini-bibliothèque PHP pour faciliter la gestion des bases de données et des sessions.</p>
                   <div class="flex items-center flex-wrap ">
-                    <a target="_blank" href="https://github.com/emmadiblo/stand.php/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Voir sur github
+                    <a target="_blank" href="https://github.com/emmadiblo/stand.php/"  class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"><span data-translate="see-github">Voir sur github</span>
 <svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <line x1="17" y1="7" x2="7" y2="17" />  <polyline points="8 7 17 7 17 16" /></svg>
                     </a>
 
@@ -669,13 +638,13 @@ ul {
         <div class="max-w-4xl mx-auto m-4">
 
           <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
-            <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 03. Mon parcours }</h6>
+            <h6 data-translate="title3" class="text-gray-400 text-base font-normal leading-relaxed">{ 03. Mon parcours }</h6>
             <div class="mx-auto px-4 sm:container">
               <div class="border-primary border-l-[5px] pl-5">
-                <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+                <h2 data-translate="heading3" class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
                   Mon parcours professionnel
                  </h2>
-                 <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+                 <p data-translate="description3" class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
                   Découvrez ma chronorgie des activités durant durant toute ma vie.
                  </p>
               </div>
@@ -689,35 +658,35 @@ ul {
       
       <ul class="timeline">
       
-          <!-- Item 1 -->
+        
           <li>
               <div class="direction-r">
                   <div class="flag-wrapper">
-                      <span class="flag">Fondateur, CEO</span>
+                      <span data-translate="numedev-title" class="flag">Fondateur / CEO</span>
                       <span class="time-wrapper"><span class="time">2023 - present</span></span>
                   </div>
-                  <div class="desc dark:text-white">Fondateur et Répresentat de Numedev une organisation de dévéloppement digital au Burundi <a href="//numedev.github.io"   onmouseout="this.style.textDecoration='underline';" style="color: #fd1f1f; ">En savoir plus</a></div>
+                  <div  class="desc dark:text-white bg:black"><span data-translate="numedev-desc">Fondateur et représentant de Numedev, une organisation de développement digital au Burundi</span> <a data-translate="numedev-link" href="//numedev.github.io"   onmouseout="this.style.textDecoration='underline';" style="color: #fd1f1f; ">En savoir plus</a></div>
               </div>
           </li>
         
-          <!-- Item 2 -->
+   
           <li>
               <div class="direction-l">
                   <div class="flag-wrapper">
-                      <span class="flag">Université du Burundi</span>
+                      <span data-translate="univ-title" class="flag">Université du Burundi</span>
                       <span class="time-wrapper"><span class="time">2022 - 2025</span></span>
                   </div>
-                  <div class="desc dark:text-white">Etudiant à l'Université du Burundi avec aussi le renforcement des capacités dans la programmation.</div>
+                  <div data-translate="univ-desc" class="desc dark:text-white">Etudiant à l'Université du Burundi avec aussi le renforcement des capacités dans la programmation.</div>
               </div>
           </li>
       
           <li>
             <div class="direction-r">
                 <div class="flag-wrapper">
-                    <span class="flag">Initialisation</span>
+                    <span data-translate="init-title" class="flag">Initialisation</span>
                     <span class="time-wrapper"><span class="time">2020</span></span>
                 </div>
-                <div class="desc dark:text-white">Initialisation de la carrière de la programmation avec la langage de structure HTML</div>
+                <div data-translate="init-desc" class="desc dark:text-white">Initialisation de la carrière de la programmation avec la langage de structure HTML</div>
             </div>
         </li>
 
@@ -727,7 +696,7 @@ ul {
                       <span class="flag">Lycée Technique Maramvya (LTM)</span>
                       <span class="time-wrapper"><span class="time">2018-2021</span></span>
                   </div>
-                  <div class="desc dark:text-white">Etudes en informatique de maintenance au Lycée Technique Maramvya à Kayanza</div>
+                  <div data-translate="maramvya-desc" class="desc dark:text-white">Etudes en informatique de maintenance au Lycée Technique Maramvya à Kayanza</div>
               </div>
           </li>
 
@@ -737,17 +706,17 @@ ul {
                     <span class="flag">ECOFO Nyakararo</span>
                     <span class="time-wrapper"><span class="time">2009-2017</span></span>
                 </div>
-                <div class="desc dark:text-white">Etudes de l'école primaire et fondamentale</div>
+                <div data-translate="primary-desc" class="desc dark:text-white">Etudes de l'école primaire et fondamentales</div>
             </div>
         </li>
 
         <li>
           <div class="direction-l">
               <div class="flag-wrapper">
-                  <span class="flag">Naissance</span>
+                  <span data-translate="naissance-title" class="flag">Naissance</span>
                   <span class="time-wrapper"><span class="time">27-12-2002</span></span>
               </div>
-              <div class="desc dark:text-white">Né à Kigoma, Marangara, Ngozi, Burundi</div>
+              <div data-translate="naissance-desc" class="desc dark:text-white">Né à Kigoma, Marangara, Ngozi, Burundi</div>
           </div>
       </li>
         
@@ -763,13 +732,13 @@ ul {
   <div class="max-w-4xl mx-auto m-4">
 
   <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
-    <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 04. Mes services }</h6>
+    <h6 data-translate="title4" class="text-gray-400 text-base font-normal leading-relaxed">{ 04. Mes services }</h6>
     <div class="mx-auto px-4 sm:container">
       <div class="border-primary border-l-[5px] pl-5">
-        <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+        <h2 data-translate="heading4" class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
           Services offerts
          </h2>
-         <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+         <p data-translate="description4" class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
           Découvrez mes services dans le domaine de la conception, du développement et de la gestion des projets. Je suis là pour vous
          </p>
       </div>
@@ -779,69 +748,63 @@ ul {
 
 
     <div class="max-w-4xl mx-auto m-4">
-      <!-- Grid -->
+    
       <div class="grid md:grid-cols-2 gap-6 lg:gap-12">
         <div class="space-y-6 lg:space-y-10">
-          <!-- Icon Block -->
+        
           <div class="flex gap-x-5 sm:gap-x-8">
             <svg class="shrink-0 mt-2 size-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
             </svg>
             
             <div class="grow">
-              <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+              <h3 data-translate="web-title" class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
                 Développement web
               </h3>
-              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+              <p data-translate="web-desc" class="mt-1 text-gray-600 dark:text-neutral-400">
                 Conception et création de sites web et d'applications web, sites E-commerce(boutiques en ligne),...
               </p>
             </div>
           </div>
-          <!-- End Icon Block -->
+      
   
-          <!-- Icon Block -->
+        
           <div class="flex gap-x-5 sm:gap-x-8">
             <svg class="shrink-0 mt-2 size-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
             </svg>
             
             <div class="grow">
-              <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+              <h3 data-translate="mobile-title" class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
                Développement mobile
               </h3>
-              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+              <p data-translate="mobile-desc" class="mt-1 text-gray-600 dark:text-neutral-400">
                 Création d'applications pour les Android, les applications mobiles
               </p>
             </div>
           </div>
-          <!-- End Icon Block -->
-  
-          <!-- Icon Block -->
-
-          <!-- End Icon Block -->
+      
         </div>
-        <!-- End Col -->
+   
   
         <div class="space-y-6 lg:space-y-10">
-
-
           <div class="flex gap-x-5 sm:gap-x-8">
             <svg class="shrink-0 mt-2 size-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 13.5H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
             </svg>
             
             <div class="grow">
-              <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+              <h3 data-translate="soft-title" class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
                Développement des logiciels
               </h3>
-              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+              <p data-translate="soft-desc" class="mt-1 text-gray-600 dark:text-neutral-400">
                 Conception et développement d'applications de bureau, de logiciels de gestion, etc.
               </p>
             </div>
           </div>
 
 
-          <!-- Icon Block -->
+        
           <div class="flex gap-x-5 sm:gap-x-8">
          
             
@@ -850,17 +813,17 @@ ul {
             </svg>
             
             <div class="grow">
-              <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+              <h3 data-translate="conseils-title" class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
                 Services-conseils en développement
               </h3>
-              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+              <p data-translate="conseils-desc" class="mt-1 text-gray-600 dark:text-neutral-400">
                 Accompagner les entreprises dans le processus de développement, de la planification à la maintenance de leurs sites ou des applications
               </p>
             </div>
           </div>
 
         </div>
-        <!-- End Col -->
+   
       </div>
       <!-- End Grid -->
     </div>
@@ -876,13 +839,13 @@ ul {
     <div class="max-w-4xl mx-auto m-4 ">
 
     <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
-      <h6 class="text-gray-400 text-base font-normal leading-relaxed">{ 05. Contact }</h6>
+      <h6 data-translate="title5" class="text-gray-400 text-base font-normal leading-relaxed">{ 05. Contact }</h6>
       <div class="mx-auto px-4 sm:container">
         <div class="border-primary border-l-[5px] pl-5">
-          <h2 class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
+          <h2 data-translate="heading5" class="text-indigo-700 text-4xl font-bold font-manrope leading-normal lg:text-start text-center">
             Contactez Moi
            </h2>
-           <p class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+           <p data-translate="description5" class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
             Je suis disponible pour toute question, appréciations ou suggestions. N'hésitez pas à me contacter
            </p>
         </div>
@@ -929,15 +892,15 @@ ul {
     </div>
 
       <form class="space-y-4" id="contactForm">
-        <input type='text' id="name" placeholder='Votre nom et prenom'
+        <input type='text' id="name" data-translate="name" placeholder='Votre nom et prenom'
           class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
-        <input type='email' id="email" placeholder='Email'
+        <input type='email' id="email" placeholder='Email' 
           class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
-        <input type='text' id="subject" placeholder='Sujet du message'
+        <input type='text' id="subject" data-translate="subject" placeholder='Sujet du message'
           class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
         <textarea id="message" placeholder='Message' rows="6"
           class="dark:text-white w-full text-slate-900 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-blue-500"></textarea>
-        <button type='submit'
+        <button type='submit' data-translate="send"
           class=" text-white bg-blue-500 hover:bg-blue-600 rounded-md text-[15px] font-medium px-4 py-2 w-full !mt-6">Envoyer</button>
           <div style="text-align: center;" id="statusMessage"></div>
       
@@ -1012,10 +975,7 @@ ul {
 
   </footer>
 
-
-
   <!-- ========== END FOOTER ========== -->
-
 
   <script>
     /**
@@ -1032,7 +992,7 @@ ul {
     interval = setInterval(() => {
       // Simule une progression jusqu'à 90%
       if (progress < 90) {
-        progress += Math.random() * 5; // un peu aléatoire
+        progress += Math.random() * 10; // un peu aléatoire
         loadingBar.style.width = progress + "%";
       }
     }, 200);
@@ -1055,6 +1015,15 @@ ul {
 
 
   document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById('hs-navbar-header-floating-collapse');
+    const menu = document.getElementById('hs-navbar-header-floating');
+
+    toggleButton.addEventListener('click', function () {
+        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+        toggleButton.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('hidden');
+    });
+
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("#hs-navbar-header-floating a");
 
@@ -1066,12 +1035,12 @@ ul {
 
           if (entry.isIntersecting) {
             navLinks.forEach(link => {
-              link.classList.remove("border-gray-800","font-medium", "dark:border-neutral-200", "text-gray-800", "dark:text-neutral-200");
+              link.classList.remove("border-gray-800", "font-medium", "dark:border-neutral-200", "text-gray-800", "dark:text-neutral-200");
               link.classList.add("border-transparent", "text-gray-500", "dark:text-neutral-400");
             });
 
             navLink.classList.remove("border-transparent", "text-gray-500", "dark:text-neutral-400");
-            navLink.classList.add("border-gray-800","font-medium","dark:border-neutral-200", "text-gray-800", "dark:text-neutral-200");
+            navLink.classList.add("border-gray-800", "font-medium", "dark:border-neutral-200", "text-gray-800", "dark:text-neutral-200");
           }
         });
       },
@@ -1085,47 +1054,71 @@ ul {
     sections.forEach(section => {
       observer.observe(section);
     });
-  });
 
-   // Variables pour les icônes
-   var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-    var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
-    var themeToggleBtn = document.getElementById('theme-toggle');
+
+        // Masquer le menu après un clic sur un lien
+        navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden'); // Masquer le menu
+            toggleButton.setAttribute('aria-expanded', 'false'); // Mettre à jour l'état du bouton
+        });
+    });
+});
+
 
     // Vérification du thème actuel dans le localStorage et du mode par défaut
     if (localStorage.getItem('color-theme') === 'dark' || 
         (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
-      themeToggleLightIcon.classList.remove('hidden');
-    } else {
-      themeToggleDarkIcon.classList.remove('hidden');
+ 
     }
 
-    // Fonction pour basculer entre les modes sombre et clair
-    themeToggleBtn.addEventListener('click', function() {
-      // Basculer les icônes
-      themeToggleDarkIcon.classList.toggle('hidden');
-      themeToggleLightIcon.classList.toggle('hidden');
+    $(document).ready(function() {
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
 
-      // Vérification de l'état du thème et mise à jour de localStorage et du mode
-      if (localStorage.getItem('color-theme')) {
-        if (localStorage.getItem('color-theme') === 'light') {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
+                var target = this.hash; 
+
+                // Fait défiler en douceur vers l'élément cible
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top
+                }, 1000); 
+            });
+        });
+    
+    function loadLanguage(lang) {
+            // Vérifier si les traductions sont déjà stockées en local
+            let translations = localStorage.getItem(lang);
+            if (!translations) {
+                // Charger les traductions depuis le fichier JSON si non trouvées localement
+                $.getJSON('lang/' + lang + '.json', function(data) {
+                    localStorage.setItem(lang, JSON.stringify(data)); // Stocker dans localStorage
+                    updateTranslations(data);
+                });
+            } else {
+                // Charger les traductions depuis localStorage
+                updateTranslations(JSON.parse(translations));
+            }
         }
-      } else {
-        if (document.documentElement.classList.contains('dark')) {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
-        } else {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
+
+        function updateTranslations(translations) {
+            $('[data-translate]').each(function() {
+                var key = $(this).data('translate');
+                // Retourner le contenu principal si la clé n'est pas trouvée
+                $(this).text(translations[key] || $(this).text());
+            });
         }
-      }
-    });
+
+        $('#lang-switcher').on('change', function() {
+            var selectedLang = $(this).find('option:selected').data('lang');
+            localStorage.setItem('selectedLanguage', selectedLang); // Sauvegarder la langue sélectionnée
+            loadLanguage(selectedLang);
+        });
+
+        // Charger la langue sélectionnée lors du chargement de la page
+        var storedLanguage = localStorage.getItem('selectedLanguage') || 'fr'; // Par défaut, 'fr'
+        $('#lang-switcher').val(storedLanguage.toUpperCase()); // Sélectionner la langue sauvegardée
+        loadLanguage(storedLanguage);
 
 
 
