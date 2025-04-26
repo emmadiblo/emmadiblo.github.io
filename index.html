@@ -110,7 +110,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
+
 }
 .example-2 .icon-content {
   margin:0 auto;
@@ -239,18 +239,15 @@ ul {
           aria-label="Toggle navigation"
           data-hs-collapse="#hs-navbar-header-floating">
           <!-- Hamburger Icon -->
-          <svg class="hs-collapse-open:hidden shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <line x1="3" x2="21" y1="6" y2="6" />
-            <line x1="3" x2="21" y1="12" y2="12" />
-            <line x1="3" x2="21" y1="18" y2="18" />
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
+          
           <!-- Close Icon -->
-          <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path d="M18 6 6 18" />
-            <path d="M6 6l12 12" />
+          <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
+          
         </button>
       </div>
 
@@ -298,7 +295,6 @@ ul {
                 <div class="w-full flex-col justify-center items-start gap-8 flex">
                    
         
-
                         <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
                           <h6 data-translate="title1" class="text-gray-400 text-base font-normal leading-relaxed">{ 01. A propos de moi }</h6>
                           <div class="mx-auto px-4 sm:container">
@@ -504,7 +500,6 @@ ul {
     <section id="projets" class="text-gray-600 body-font">
       <div class="max-w-4xl mx-auto m-4">
 
-          
           <div class="flex-col justify-start lg:items-start items-center gap-4 flex text-center">
             <h6 data-translate="title2" class="text-gray-400 text-base font-normal leading-relaxed">{ 02. Mes projets }</h6>
             <div class="mx-auto px-4 sm:container">
@@ -623,16 +618,9 @@ ul {
               </div>
             </div>
 
-
-
           </div>
         </div>
       </section>
-
-
-
-  
-
 
       <section id="timeline">
         <div class="max-w-4xl mx-auto m-4">
@@ -651,15 +639,11 @@ ul {
            </div>
         </div>
 
-
-    
       <!-- The Timeline -->
        <div class="timeline-section m-4">
-      
+
       <ul class="timeline">
-      
-        
-          <li>
+       <li>
               <div class="direction-r">
                   <div class="flag-wrapper">
                       <span data-translate="numedev-title" class="flag">Fondateur / CEO</span>
@@ -719,13 +703,11 @@ ul {
               <div data-translate="naissance-desc" class="desc dark:text-white">Né à Kigoma, Marangara, Ngozi, Burundi</div>
           </div>
       </li>
-        
       </ul>
+
     </div>
-      </div>
-    </section>
-
-
+  </div>
+ </section>
 
 
 <section id="services" >
@@ -744,8 +726,6 @@ ul {
       </div>
    </div>
 </div>
-
-
 
     <div class="max-w-4xl mx-auto m-4">
     
@@ -804,10 +784,8 @@ ul {
           </div>
 
 
-        
           <div class="flex gap-x-5 sm:gap-x-8">
-         
-            
+        
             <svg class="shrink-0 mt-2 size-8 text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
             </svg>
@@ -832,8 +810,6 @@ ul {
   </section>
 
 
-
-
   <section id="contact">
 
     <div class="max-w-4xl mx-auto m-4 ">
@@ -852,7 +828,6 @@ ul {
      </div>
   </div>
   
-
     <div class="grid sm:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl bg-white  rounded-md dark:bg-black">
 
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-1">
@@ -892,13 +867,13 @@ ul {
     </div>
 
       <form class="space-y-4" id="contactForm">
-        <input type='text' id="name" data-translate="name" placeholder='Votre nom et prenom'
+        <input required type='text' id="name" data-translate="name" placeholder='Votre nom et prenom'
           class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
-        <input type='email' id="email" placeholder='Email' 
+        <input required type='email' id="email" placeholder='Email' 
           class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
         <input type='text' id="subject" data-translate="subject" placeholder='Sujet du message'
           class="dark:text-white w-full text-slate-900 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
-        <textarea id="message" placeholder='Message' rows="6"
+        <textarea required id="message" placeholder='Message' rows="6"
           class="dark:text-white w-full text-slate-900 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-blue-500"></textarea>
         <button type='submit' data-translate="send"
           class=" text-white bg-blue-500 hover:bg-blue-600 rounded-md text-[15px] font-medium px-4 py-2 w-full !mt-6">Envoyer</button>
@@ -908,7 +883,6 @@ ul {
     </div>
   </div>
   </section>
-
 
 
   <!-- ========== FOOTER ========== -->
@@ -991,8 +965,8 @@ ul {
   function simulateProgress() {
     interval = setInterval(() => {
       // Simule une progression jusqu'à 90%
-      if (progress < 90) {
-        progress += Math.random() * 10; // un peu aléatoire
+      if (progress < 99) {
+        progress += Math.random() * 5; // un peu aléatoire
         loadingBar.style.width = progress + "%";
       }
     }, 200);
@@ -1086,43 +1060,43 @@ ul {
             });
         });
     
-    function loadLanguage(lang) {
-            // Vérifier si les traductions sont déjà stockées en local
-            let translations = localStorage.getItem(lang);
-            if (!translations) {
-                // Charger les traductions depuis le fichier JSON si non trouvées localement
-                $.getJSON('lang/' + lang + '.json', function(data) {
-                    localStorage.setItem(lang, JSON.stringify(data)); // Stocker dans localStorage
-                    updateTranslations(data);
-                });
-            } else {
-                // Charger les traductions depuis localStorage
-                updateTranslations(JSON.parse(translations));
-            }
-        }
-
-        function updateTranslations(translations) {
-            $('[data-translate]').each(function() {
-                var key = $(this).data('translate');
-                // Retourner le contenu principal si la clé n'est pas trouvée
-                $(this).text(translations[key] || $(this).text());
-            });
-        }
-
-        $('#lang-switcher').on('change', function() {
-            var selectedLang = $(this).find('option:selected').data('lang');
-            localStorage.setItem('selectedLanguage', selectedLang); // Sauvegarder la langue sélectionnée
-            loadLanguage(selectedLang);
+        function loadLanguage(lang) {
+    let translations = localStorage.getItem(lang);
+    if (!translations) {
+        $.getJSON('lang/' + lang + '.json', function(data) {
+            localStorage.setItem(lang, JSON.stringify(data));
+            updateTranslations(data);
         });
+    } else {
+        updateTranslations(JSON.parse(translations));
+    }
+}
 
-        // Charger la langue sélectionnée lors du chargement de la page
-        var storedLanguage = localStorage.getItem('selectedLanguage') || 'fr'; // Par défaut, 'fr'
-        $('#lang-switcher').val(storedLanguage.toUpperCase()); // Sélectionner la langue sauvegardée
-        loadLanguage(storedLanguage);
+function updateTranslations(translations) {
+    $('[data-translate]').each(function() {
+        var key = $(this).data('translate');
+        // Mettre à jour le texte ou le placeholder
+        if ($(this).is('input, textarea')) {
+            $(this).attr('placeholder', translations[key] || $(this).attr('placeholder'));
+        } else {
+            $(this).text(translations[key] || $(this).text());
+        }
+    });
+}
+
+$('#lang-switcher').on('change', function() {
+    var selectedLang = $(this).find('option:selected').data('lang');
+    localStorage.setItem('selectedLanguage', selectedLang);
+    loadLanguage(selectedLang);
+});
+
+// Charger la langue sélectionnée lors du chargement de la page
+var storedLanguage = localStorage.getItem('selectedLanguage') || 'fr';
+$('#lang-switcher').val(storedLanguage.toUpperCase());
+loadLanguage(storedLanguage);
 
 
-
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
+document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Empêche le rechargement de la page
 
     const statusMessage = document.getElementById("statusMessage");
@@ -1130,10 +1104,9 @@ ul {
 
     // Désactive le bouton et change le texte
     submitButton.disabled = true;
-    submitButton.textContent = "Envoi...";
 
     // Affiche le message de statut
-    statusMessage.textContent = "Envoi en cours...";
+    statusMessage.textContent = getTranslation("sending"); 
     statusMessage.style.color = "orange";
 
     // Récupération des données du formulaire
@@ -1148,8 +1121,7 @@ ul {
     emailjs.send('Contact', 'template_21d30nu', templateParams)
       .then(function (response) {
         console.log('Success:', response);
-
-        statusMessage.textContent = "Message envoyé avec succès !";
+        statusMessage.textContent = getTranslation("success"); 
         statusMessage.style.color = "green";
 
         // Réinitialise le formulaire
@@ -1157,15 +1129,27 @@ ul {
       })
       .catch(function (error) {
         console.error('Error:', error);
-        statusMessage.textContent = "Message non envoyé ! Veuillez réessayer plus tard.";
+
+        if (!navigator.onLine) {
+          statusMessage.textContent = getTranslation("Networkerror");
+          statusMessage.style.color = "red";
+}
+        statusMessage.textContent = getTranslation("error"); 
         statusMessage.style.color = "red";
       })
       .finally(function () {
         // Réactive le bouton après la réponse
         submitButton.disabled = false;
-        submitButton.textContent = "Envoyer";
+        submitButton.textContent = getTranslation("send"); 
       });
-  });
+});
+
+// Fonction pour récupérer la traduction
+function getTranslation(key) {
+    let translations = JSON.parse(localStorage.getItem(localStorage.getItem('selectedLanguage'))) || {};
+    return translations[key] || key; 
+}
+
 </script>
 </body>
 </html>

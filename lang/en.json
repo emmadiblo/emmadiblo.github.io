@@ -5,10 +5,10 @@
     "timeline": "Timeline",
     "services": "Services",
     "contact": "Contact",
-    "title1": "{ 01. A propos }",
-    "title2": "{ 02. Mes projets }",
-    "title3": "{ 03. Mon parcours }",
-    "title4": "{ 04. Mes services }",
+    "title1": "{ 01. About me }",
+    "title2": "{ 02. My projects }",
+    "title3": "{ 03. My journey }",
+    "title4": "{ 04. My services }",
     "title5": "{ 05. Contact }",
 
     "heading1": "My name is Uwizeyimana Emmanuel",
@@ -64,6 +64,10 @@
     "conseils-desc": "Support companies in the development process, from planning to maintenance of their sites or applications",
     "name": "Your first and last name",
     "subject": "Subject",
-    "send": "Send"
+    "sending": "Sending...",
+    "success": "Your message has been sent successfully.!",
+    "Networkerror": "A network error has occurred! Please check your internet connection.",
+    "send": "Send",
+    "error": "An error occurred while sending your message! Please try again."
 
 }

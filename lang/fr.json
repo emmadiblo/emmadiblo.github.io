@@ -65,6 +65,10 @@
     "conseils-desc": "Accompagner les entreprises dans le processus de développement, de la planification à la maintenance de leurs sites ou des applications.",
     "name": "Votre nom et prenom",
     "subject": "Sujet du message",
-    "send": "Envoyer"
+    "sending": "Envoi en cours...",
+    "success": "Votre message est envoyé avec succès!",
+    "Networkerror": "Une erreur réseau s'est produite! Veuillez vérifier la connexion internet",
+    "send": "Envoyer",
+    "error": "Une erreur s'est produite lors de l'envoie de votre message! Veuillez Réessayer"
 
 }
