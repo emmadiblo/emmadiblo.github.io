@@ -160,7 +160,6 @@
 .time {
   display: inline-block;
   padding:10px;
-  
 }
 
 .desc {
@@ -208,13 +207,13 @@
 .direction-l .flag:before,
 .direction-r .flag:before {
   position: absolute;
-  top: -30px;
+  top: -10px;
 	left: 50%;
 	content: ' ';
 	display: block;
 	width: 12px;
 	height: 12px;
-	margin-left: -9px;
+	margin-left: -5px;
 	border-radius: 10px;
 	border: 4px solid rgb(255,80,80);
 	z-index: 10;
@@ -273,11 +272,9 @@
 
 }
 
-@media screen and (min-width: 400px ?? max-width: 660px) {
-
-.direction-l .desc,
-.direction-r .desc {
-	margin: 1em 4em 0 4em;
-}
-
+@media screen and (min-width: 400px) and (max-width: 660px) {
+  .direction-l .desc,
+  .direction-r .desc {
+    margin: 0 4em 2em 5em;
+  }
 }
