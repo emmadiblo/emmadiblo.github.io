@@ -956,36 +956,51 @@ ul {
    * Preloader
    */
 
-  const loadingBar = document.getElementById('loadingBar');
-  const overlay = document.getElementById('loadingOverlay');
+const loadingBar = document.getElementById('loadingBar');
+const overlay = document.getElementById('loadingOverlay');
 
-  let progress = 0;
-  let interval;
+// Suivi des ressources
+let resourcesLoaded = 0;
+let resourcesTotal = 0;
 
-  function simulateProgress() {
-    interval = setInterval(() => {
-      // Simule une progression jusqu'à 90%
-      if (progress < 99) {
-        progress += Math.random() * 5; // un peu aléatoire
-        loadingBar.style.width = progress + "%";
-      }
-    }, 200);
-  }
+// Observer le chargement des ressources
+const observer = new PerformanceObserver((list) => {
+  resourcesLoaded++;
+  const progress = Math.min(Math.round((resourcesLoaded / resourcesTotal) * 100), 99);
+  loadingBar.style.width = progress + "%";
+});
 
-  // Commence à simuler la progression
-  simulateProgress();
+observer.observe({ entryTypes: ['resource'] });
 
-  // Quand tout est chargé réellement
-  window.addEventListener("load", () => {
-    clearInterval(interval); // stop simulation
-    progress = 100;
-    loadingBar.style.width = "100%";
+// Initialiser le compteur de ressources
+document.addEventListener('DOMContentLoaded', () => {
+  // Sélection des ressources principales
+  const resources = document.querySelectorAll('img, script, link[rel="stylesheet"], video, iframe');
+  resourcesTotal = Math.max(resources.length, 1); // Au moins 1 ressource
+});
 
-    // Petite pause avant de cacher
-    setTimeout(() => {
-      overlay.style.display = "none";
-    }, 500);
-  });
+// Quand tout est chargé
+window.addEventListener('load', () => {
+  observer.disconnect();
+  loadingBar.style.width = "100%";
+  
+  setTimeout(() => {
+    overlay.style.display = "none";
+  }, 500);
+});
+
+// Quand tout est chargé réellement
+window.addEventListener("load", () => {
+  observer.disconnect(); // Arrêter l'observation
+  
+  // Mettre la barre à 100%
+  loadingBar.style.width = "100%";
+
+  // Petite pause avant de cacher
+  setTimeout(() => {
+    overlay.style.display = "none";
+  }, 500);
+});
 
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -1096,6 +1111,7 @@ $('#lang-switcher').val(storedLanguage.toUpperCase());
 loadLanguage(storedLanguage);
 
 
+
 document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Empêche le rechargement de la page
 
@@ -1130,12 +1146,14 @@ document.getElementById("contactForm").addEventListener("submit", function (even
       .catch(function (error) {
         console.error('Error:', error);
 
-        if (!navigator.onLine) {
-          statusMessage.textContent = getTranslation("Networkerror");
-          statusMessage.style.color = "red";
-}
+      if (!navigator.onLine) {
+                statusMessage.textContent = getTranslation("Networkerror");
+                statusMessage.style.color = "red";
+      }else{
         statusMessage.textContent = getTranslation("error"); 
         statusMessage.style.color = "red";
+      }
+
       })
       .finally(function () {
         // Réactive le bouton après la réponse
