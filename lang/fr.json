@@ -4,6 +4,7 @@
     "projects": "Projets",
     "timeline": "Parcours",
     "services": "Services",
+    "formations": "Formations",
     "contact": "Contact",
     "title1": "{ 01. A propos }",
     "title2": "{ 02. Mes projets }",
@@ -15,13 +16,15 @@
     "heading2": "Les projets que j'ai réalisés",
     "heading3": " Mon parcours professionnel",
     "heading4": "Services offerts",
-    "heading5": "Contactez Moi",
+    "heading5": "Formations",
+    "heading6": "Contactez Moi",
 
     "description1": "Je suis un développeur burundais des applications web et mobile  passionné de l'innovation et de la technologie informatique.",
     "description2": " Découvrez mes projets réalisés avec amour et dédication.",
     "description3": "Découvrez ma chronorgie des activités durant durant toute ma vie.",
     "description4": "Découvrez mes services dans le domaine de la conception, du développement et de la gestion des projets. Je suis là pour vous.",
-    "description5": "Je suis disponible pour toute question, appréciations ou suggestions. N'hésitez pas à me contacter.",
+    "description5": "J'offre des services de formations privées selon le niveau de chaque apprenant.",
+    "description6": "Je suis disponible pour toute question, appréciations ou suggestions. N'hésitez pas à me contacter.",
 
     "experience-title": "5+ Ans",
     "experience-description": "J'ai l'experience de plus de 5 dans le développement des applications.",
@@ -63,6 +66,21 @@
     "soft-desc": "Conception et développement d'applications de bureau, de logiciels de gestion, etc.",
     "conseils-title": "Services-conseils en développement",
     "conseils-desc": "Accompagner les entreprises dans le processus de développement, de la planification à la maintenance de leurs sites ou des applications.",
+    
+
+    "webin-desc": "Initialisation à la programmation web",
+    "webint-desc": "Pour ceux qui veulent apprendre la programmation web intermediaire",
+    "webdev-desc": "Pour ceux qui veulent apprendre la programmation web avancée",
+    "burebas-desc": "Pour ceux qui veulent apprendre la bureautique",
+    "burein-desc": "Pour ceux qui veulent apprendre la bureautique et internet",
+    "burav-desc": "Pour ceux qui veulent apprendre la bureautique, internet et les autres options très avancées",
+
+    "populaire": "Populaire",
+    "choisir": "Choisir",
+    "mois": "/mois",
+    "avis": "Les jours d'études ne doivent pas dépasser 2 jours par semaine. La disponibilité est négociable.",
+    "cours-inclus": "Le cours inclus:",
+
     "name": "Votre nom et prenom",
     "subject": "Sujet du message",
     "sending": "Envoi en cours...",
